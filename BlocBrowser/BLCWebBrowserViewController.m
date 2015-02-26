@@ -20,6 +20,8 @@
     @property (nonatomic, strong) BLCAwesomeFloatingToolbar *awesomeToolbar;
     @property (nonatomic, strong) UIActivityIndicatorView *activityIndicator;
     @property (nonatomic, assign) NSUInteger frameCount;
+    @property (nonatomic, strong) NSArray *backgroundColors;
+    @property (nonatomic, strong) UIColor *activeBackgroundColor;
 @end
 
 @implementation BLCWebBrowserViewController
@@ -66,6 +68,11 @@
         self.webview.frame = CGRectMake(0, CGRectGetMaxY(self.textField.frame), width, browserHeight);
         
         self.awesomeToolbar.frame = CGRectMake(20, 100, 280, 60);
+        
+        UIColor *gray = [UIColor grayColor];
+        UIColor *red = [UIColor redColor];
+        self.backgroundColors = @[gray, red];
+        self.activeBackgroundColor = gray;
     }
 
     - (void)viewDidLoad {
@@ -185,14 +192,33 @@
         }
     }
 
-    /*
-    #pragma mark - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+    - (void) floatingToolbar:(BLCAwesomeFloatingToolbar *)toolbar didTryToPanWithOffset:(CGPoint)offset {
+        CGPoint startingPoint = toolbar.frame.origin;
+        CGPoint newPoint = CGPointMake(startingPoint.x + offset.x, startingPoint.y + offset.y);
+        
+        CGRect potentialNewFrame = CGRectMake(newPoint.x, newPoint.y, CGRectGetWidth(toolbar.frame), CGRectGetHeight(toolbar.frame));
+        
+        if (CGRectContainsRect(self.view.bounds, potentialNewFrame)) {
+            toolbar.frame = potentialNewFrame;
+        }
     }
-    */
+
+    - (void) floatingToolbar:(BLCAwesomeFloatingToolbar *)toolbar didTryToPinch:(CGAffineTransform)transform {
+        toolbar.transform = transform;
+    }
+
+
+    - (void) floatingToolbar:(BLCAwesomeFloatingToolbar *)toolbar didLongPress:(NSNumber *)number {
+    
+        if(self.activeBackgroundColor == [UIColor grayColor]){
+            self.activeBackgroundColor = [UIColor whiteColor];
+            self.textField.backgroundColor = [UIColor whiteColor];
+        }
+        else{
+            self.activeBackgroundColor = [UIColor grayColor];
+            self.textField.backgroundColor = [UIColor grayColor];
+        }
+        
+    }
 
 @end
