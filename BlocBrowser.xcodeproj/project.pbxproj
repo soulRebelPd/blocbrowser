@@ -14,6 +14,7 @@
 		04ED7AB31A9E158900D36E0C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04ED7AB11A9E158900D36E0C /* LaunchScreen.xib */; };
 		04ED7ABF1A9E158900D36E0C /* BlocBrowserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04ED7ABE1A9E158900D36E0C /* BlocBrowserTests.m */; };
 		04ED7ACA1A9E15B600D36E0C /* BLCWebBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04ED7AC91A9E15B600D36E0C /* BLCWebBrowserViewController.m */; };
+		04ED7ACD1A9E66DD00D36E0C /* BLCAwesomeFloatingToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 04ED7ACC1A9E66DD00D36E0C /* BLCAwesomeFloatingToolbar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,8 @@
 		04ED7ABE1A9E158900D36E0C /* BlocBrowserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlocBrowserTests.m; sourceTree = "<group>"; };
 		04ED7AC81A9E15B600D36E0C /* BLCWebBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCWebBrowserViewController.h; sourceTree = "<group>"; };
 		04ED7AC91A9E15B600D36E0C /* BLCWebBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCWebBrowserViewController.m; sourceTree = "<group>"; };
+		04ED7ACB1A9E66DD00D36E0C /* BLCAwesomeFloatingToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCAwesomeFloatingToolbar.h; sourceTree = "<group>"; };
+		04ED7ACC1A9E66DD00D36E0C /* BLCAwesomeFloatingToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCAwesomeFloatingToolbar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,8 @@
 				04ED7AA21A9E158900D36E0C /* Supporting Files */,
 				04ED7AC81A9E15B600D36E0C /* BLCWebBrowserViewController.h */,
 				04ED7AC91A9E15B600D36E0C /* BLCWebBrowserViewController.m */,
+				04ED7ACB1A9E66DD00D36E0C /* BLCAwesomeFloatingToolbar.h */,
+				04ED7ACC1A9E66DD00D36E0C /* BLCAwesomeFloatingToolbar.m */,
 			);
 			path = BlocBrowser;
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04ED7ACD1A9E66DD00D36E0C /* BLCAwesomeFloatingToolbar.m in Sources */,
 				04ED7AAB1A9E158900D36E0C /* ViewController.m in Sources */,
 				04ED7AA81A9E158900D36E0C /* AppDelegate.m in Sources */,
 				04ED7ACA1A9E15B600D36E0C /* BLCWebBrowserViewController.m in Sources */,
